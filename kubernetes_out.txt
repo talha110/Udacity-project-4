@@ -1,0 +1,10 @@
+) ubuntu:~/environment/DevOps_Microservices/project-ml-microservice-kubernetes (master) $ ./run_kubernetes.sh
+Docker ID and Image: talha110/house_prediction_app
+Flag --generator has been deprecated, has no effect and will be removed in the future.
+pod/predictionapi created
+NAME            READY   STATUS              RESTARTS   AGE
+predictionapi   0/1     ContainerCreating   0          0s
+error: unable to forward port because pod is not running. Current status=Pending
+(.devops) ubuntu:~/environment/DevOps_Microservices/project-ml-microservice-kubernetes (master) $ kubectl get po
+NAME            READY   STATUS    RESTARTS   AGE
+predictionapi   1/1     Running   0          55s
