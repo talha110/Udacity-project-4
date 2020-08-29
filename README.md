@@ -72,8 +72,8 @@ DockerHub Link
 
 1. .circleci folder for running builds on circleci.
 2. model_data folder containing model files.
-3. output text files folder containing outputs text files after running docker and Kubernetes respectively.
+3. output text files folder containing outputs of Dockefile and Kubernetes script files.
 4. app.py file containing api code for python
 5. Docker file for building docker image
 6. Makefile for automating Linux commands
-7. bash files for easier execution of multiple Linux commands for running docker , Kubernetes , uploading to docker and making predictions.
+7. bash files for easier execution of multiple Linux commands.
