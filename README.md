@@ -1,5 +1,9 @@
  [![Talha110](https://circleci.com/gh/talha110/Udacity-project-4.svg?style=svg)](https://app.circleci.com/pipelines/github/talha110/Udacity-project-4)
 
+# Cloud DevOps Engineer Nanodegree - Machine Learning Microservice API
+
+
+
 ## Project Overview
 
 In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
@@ -15,28 +19,61 @@ Your project goal is to operationalize this working, machine learning microservi
 * Improve the log statements in the source code for this application
 * Configure Kubernetes and create a Kubernetes cluster
 * Deploy a container using Kubernetes and make a prediction
-* Upload a complete Github repo with CircleCI to indicate that your code has been tested
-
-You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
+* Upload a complete GitHub repo with CircleCI to indicate that your code has been tested
 
 **The final implementation of the project will showcase your abilities to operationalize production microservices.**
 
 ---
 
-## Setup the Environment
+### Running the application
 
-* Create a virtualenv and activate it
-* Run `make install` to install the necessary dependencies
+**Setup the Environment:**
 
-### Running `app.py`
+```
+#Setup a python virtual environment and activate it
 
-1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+python3 -m venv ~/.devops
+source ~/.devops/bin/activate
+
+#Install the necessary dependencies
+make install
+
+#Linit the Docker file from hadolinter
+make lint
+
+
+```
+
+**Running app.py**
+
+1. Run in Docker: `./run_docker.sh`
+2. Run in Kubernetes: `./run_kubernetes.sh`
+
+The application will be running on [http://localhost:8000](http://localhost:8000
+
+### Predict housing prices
+
+While the application is running, run `./make_predicion.sh` to make calls to the API
+
+### Upload Docker image to DockerHub
+
+After running `./run_docker.sh`, execute script`./upload_docker.sh` to upload image to DockerHub
+DockerHub Link
+[Dockerhub Image Link](https://hub.docker.com/repository/docker/talha110/house_prediction_app
 
 ### Kubernetes Steps
 
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
+- Setup and Configure Docker locally
+- Setup and Configure Kubernetes locally
+- Create Flask app in Container
+- Run via kubectl
+
+### Description of Files  
+
+1. .circleci folder for running builds on circleci.
+2. model_data folder containing model files.
+3. output text files folder containing outputs text files after running docker and Kubernetes respectively.
+4. app.py file containing api code for python
+5. Docker file for building docker image
+6. Makefile for automating Linux commands
+7. bash files for easier execution of multiple Linux commands for running docker , Kubernetes , uploading to docker and making predictions.
